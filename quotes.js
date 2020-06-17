@@ -497,15 +497,9 @@ function pickFromArray(choices) {
 }
 
 const containerDiv = document.createElement("div");
-containerDiv.style.width = "800px";
-containerDiv.style.height = "100%";
-containerDiv.style.backgroundColor = "pink";
 
 const quoteLine = document.createElement("h1");
 const authorLine = document.createElement("h3");
-
-const nextButton = document.createElement("button");
-nextButton.innerText = "Next Quote";
 
 function loadQuote() {
   const chosenQuote = pickFromArray(quotes);
@@ -513,8 +507,11 @@ function loadQuote() {
   authorLine.innerText = "- " + chosenQuote.author;
   containerDiv.appendChild(quoteLine);
   containerDiv.appendChild(authorLine);
-  containerDiv.appendChild(nextButton);
 }
+
+const nextButton = document.createElement("button");
+nextButton.innerText = "Next Quote";
+containerDiv.appendChild(nextButton);
 
 nextButton.addEventListener("click", loadQuote);
 
